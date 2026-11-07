@@ -1,5 +1,7 @@
 #version 2
--- Warehouse Ring: the crowd, its hype, mantling into the ring, respawns after a knockout.
+-- Warehouse Ring: the crowd, its hype, respawns after a knockout, getting into the ring (onto the 1.2 m apron, over
+-- the ropes): the Clamber mod's mantle and rail vault when the host runs it (Workshop 3835599376; its rays skip the
+-- crowd's layer: climbing.raymask), else the map's own legacy mantle (mantle.lua).
 --
 -- Server: watches "playerhurt" / "playerdied" in the ring and raises the crowd's HYPE (0 = idle murmur, 1 = roaring,
 -- up to HYPE_MAX on a knockout): a hit adds by its damage, a combo (COMBO_HITS hits by one fighter on one victim, at
@@ -41,8 +43,16 @@ SPAWNS = {{0, 7.2, 180}, {7.2, 0, -90}, {-7.2, 0, 90}, {0, -7.2, 0}}   -- x, z, 
 
 ------------------------------------------------------------------------------------------------------------- server
 
+-- Clamber's rays (mantle, ladders) skip the crowd's layer: its bit added to climbing.raymask, keeping any other mod's
+-- (read on every machine: synced); re-checked every second (another mod may set the key after us)
+local function climbRayMask()
+	local m = GetInt("climbing.raymask")
+	if math.floor(m / CROWD_LAYER) % 2 == 0 then SetInt("climbing.raymask", m + CROWD_LAYER, true) end
+end
+
 function server.init()
 	mantleServerInit()
+	climbRayMask()
 	srv = {hype = 0, rest = 0, lastAction = -999, inside = {}, ev = 0, kind = "", at = Vec(0, RING_H, 0), combos = {}, respawn = {}, pubAt = 0,
 		brawlSeen = GetInt("brawl.event.last")}
 	-- the Brawl game mode's fight area (its API: a box from the canvas up, inside the ropes)
@@ -144,7 +154,9 @@ function server.tick(dt)
 		if now - c.t > COMBO_GAP then srv.combos[k] = nil end
 	end
 	if now - srv.pubAt > 0.1 then publish() end
+	if now - (srv.maskT or -9) > 1 then srv.maskT = now; climbRayMask() end
 end
+
 
 function server.update(dt)
 	mantleServerUpdate(dt)

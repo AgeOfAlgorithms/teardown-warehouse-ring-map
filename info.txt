@@ -1,5 +1,5 @@
 name = Warehouse Ring
 author = AgeOfAlgorithms and Claude
-description = An underground boxing night in a dark warehouse: a ring under a single spotlight, a few hundred fans on the floor and the bleachers around it. The crowd gets louder and wilder with every punch in the ring - combos and knockouts send them through the roof. Climb into the ring: walk into the apron's edge and keep pushing to pull yourself up, then over the ropes (hold crouch to let go). Works with the Brawl game mode (the ring is its fight area) and with the Combat System mod for bare-knuckle fights.
+description = An underground boxing night in a dark warehouse: a ring under a single spotlight, a few hundred fans on the floor and the bleachers around it. The crowd gets louder and wilder with every punch in the ring - combos and knockouts send them through the roof. Climb into the ring: walk into the apron's edge and keep pushing to pull yourself up, then over the ropes (with the Clamber mod on, Workshop 3835599376, the climbing is Clamber's). Works with the Brawl game mode (the ring is its fight area) and with the Combat System mod for bare-knuckle fights.
 tags = Map
 version = 2

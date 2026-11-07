@@ -11,6 +11,8 @@ An underground boxing night in a dark warehouse: a ring under a single spotlight
 - Push on into the ropes and you vault over them onto the canvas (and back out the same way).
 - Hold crouch to let go.
 
+With the [Clamber](https://steamcommunity.com/sharedfiles/filedetails/?id=3835599376) mod on (Global mods) the climbing is Clamber's; without it the map's own climb (`mantle.lua`) works the same way.
+
 ## Fighting
 For bare-knuckle fights turn on the [Combat System](https://steamcommunity.com/sharedfiles/filedetails/?id=3822172014) mod (Global mods). Play it with the [Brawl](https://steamcommunity.com/sharedfiles/filedetails/?id=3833372098) game mode for team rounds with knockdowns: the ring is its fight area, and the crowd reacts to every hit.
 

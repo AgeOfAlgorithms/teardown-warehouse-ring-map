@@ -11,6 +11,14 @@
 -- onto the ledge top, headroom checks, then the player is driven by velocity: up the face, then over the edge
 -- (centred on thin beams, or over a thin rail and down the far side).
 -- Every client: the game's own jump-landing pose on the climber (its locomotion's override hook), a first-person dip.
+--
+-- The LEGACY mantle: Clamber (a separate global mod, Workshop 3835599376: ladders, climbable walls and its own mantle
+-- with rail vaults) takes over when the host runs it (climbing.present, polled every second - another mod's init may
+-- run after ours): this mantle is then off for the session and stays the fallback without it (the user: "switch to
+-- legacy mantle if clamber mod is not detected"; Humans vs Clickers' way - it never sets climbing.off). ring.lua adds
+-- the crowd's layer to climbing.raymask; Clamber's climbing.on.<p> counts as mantling (mantleActive) on every
+-- machine. Both honour climbing.block.<p> (the Brawl game mode sets it for the knocked, the eliminated, the
+-- countdown...): written by the mode, never by the map.
 
 MANTLE_MIN_RISE = 0.35         -- lower ledges: the normal step-up / landing handles them
 MANTLE_MIN_RISE_GROUND = 0.55
@@ -169,15 +177,32 @@ local function driveMantle(p, m, feet, dt)
 	SetPlayerVelocity(VecAdd(VecScale(dir, sp), Vec(0, vy, 0)), p)
 end
 
+local CL = {seen = false, pollT = 0}
+
+-- (server.update) Clamber found yet? Polled every second, seen for the session: then this mantle is off (true)
+local function climbHandOver(dt)
+	CL.pollT = CL.pollT - dt
+	if not CL.seen and CL.pollT <= 0 then
+		CL.pollT = 1
+		if GetBool("climbing.present") then
+			CL.seen = true
+			shared.ringClimbing = true
+			for p, m in pairs(M.players) do if m.active then endMantle(p, m, 0.2, GetPlayerVelocity(p)) end end
+		end
+	end
+	return CL.seen
+end
+
 -- server.update (60 Hz)
 function mantleServerUpdate(dt)
+	if climbHandOver(dt) then return end
 	for p in Players() do
 		local m = M.players[p]
 		if not m then m = {cool = 0}; M.players[p] = m end
 		m.cool = m.cool - dt
 		local feet = GetPlayerTransform(p).pos
 		local v = GetPlayerVelocity(p)
-		if mFlying(p) or GetPlayerHealth(p) <= 0 or (mantleBlocked and mantleBlocked(p)) then
+		if mFlying(p) or GetPlayerHealth(p) <= 0 or (mantleBlocked and mantleBlocked(p)) or GetBool("climbing.block." .. p) then
 			if m.active then endMantle(p, m, 0.2, v) end
 		elseif m.active then
 			driveMantle(p, m, feet, dt)
@@ -199,8 +224,10 @@ function mantleServerUpdate(dt)
 	for p in PlayersRemoved() do M.players[p] = nil end
 end
 
--- is player p mantling (any machine)?
-function mantleActive(p) return shared.mantle ~= nil and shared.mantle[p] ~= nil end
+-- is player p mantling (any machine)? (or climbing with Clamber)
+function mantleActive(p)
+	return (shared.mantle ~= nil and shared.mantle[p] ~= nil) or (shared.ringClimbing == true and GetBool("climbing.on." .. p))
+end
 
 local A = {}                                                  -- per player on this machine: {n, t0, on}
 
