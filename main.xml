@@ -1,0 +1,170 @@
+<scene version="3" shadowVolume="50 14 38">
+	<environment template="night" ambience=" " skyboxbrightness="0.02" ambient="0.04" exposure="1 2.5" fogColor="0.02 0.02 0.025" fogParams="30 90 0.9 2" fogscale="1.2" nightlight="true"/>
+	<postprocessing bloom="1.4" saturation="1.05" gamma="0.95"/>
+	<spawnpoint pos="0 0 7.2" rot="0 180 0"/>
+	<spawnpoint pos="7.2 0 0" rot="0 -90 0"/>
+	<spawnpoint pos="-7.2 0 0" rot="0 90 0"/>
+	<spawnpoint pos="0 0 -7.2" rot="0 0 0"/>
+	<voxbox tags="floor" pos="-22.8 -0.3 -17.2" size="455 3 344" material="masonry" color="0.33 0.33 0.32"/>
+	<voxbox tags="roof" pos="-22.8 10 -17.2" size="455 2 344" material="metal" color="0.16 0.17 0.18"/>
+	<body tags="walls">
+		<vox pos="-16.80 5.00 -17.00" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="-16.80 5.00 17.00" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="-5.60 5.00 -17.00" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="-5.60 5.00 17.00" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="5.60 5.00 -17.00" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="5.60 5.00 17.00" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="16.80 5.00 -17.00" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="16.80 5.00 17.00" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="-22.60 5.00 -11.20" rot="0 90 0" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="22.60 5.00 -11.20" rot="0 90 0" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="-22.60 5.00 -0.00" rot="0 90 0" file="MOD/vox/wall_door.vox"/>
+		<vox pos="22.60 5.00 -0.00" rot="0 90 0" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="-22.60 5.00 11.20" rot="0 90 0" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="22.60 5.00 11.20" rot="0 90 0" file="MOD/vox/wall_panel.vox"/>
+		<vox pos="-22.40 5.00 -16.60" file="MOD/vox/column.vox"/>
+		<vox pos="-22.40 5.00 16.60" file="MOD/vox/column.vox"/>
+		<vox pos="-11.20 5.00 -16.60" file="MOD/vox/column.vox"/>
+		<vox pos="-11.20 5.00 16.60" file="MOD/vox/column.vox"/>
+		<vox pos="0.00 5.00 -16.60" file="MOD/vox/column.vox"/>
+		<vox pos="0.00 5.00 16.60" file="MOD/vox/column.vox"/>
+		<vox pos="11.20 5.00 -16.60" file="MOD/vox/column.vox"/>
+		<vox pos="11.20 5.00 16.60" file="MOD/vox/column.vox"/>
+		<vox pos="22.40 5.00 -16.60" file="MOD/vox/column.vox"/>
+		<vox pos="22.40 5.00 16.60" file="MOD/vox/column.vox"/>
+		<vox pos="-22.20 5.00 -16.80" file="MOD/vox/column.vox"/>
+		<vox pos="22.20 5.00 -16.80" file="MOD/vox/column.vox"/>
+		<vox pos="-22.20 5.00 -5.60" file="MOD/vox/column.vox"/>
+		<vox pos="22.20 5.00 -5.60" file="MOD/vox/column.vox"/>
+		<vox pos="-22.20 5.00 5.60" file="MOD/vox/column.vox"/>
+		<vox pos="22.20 5.00 5.60" file="MOD/vox/column.vox"/>
+		<vox pos="-22.20 5.00 16.80" file="MOD/vox/column.vox"/>
+		<vox pos="22.20 5.00 16.80" file="MOD/vox/column.vox"/>
+	</body>
+	<body tags="trusses">
+		<vox pos="-16.80 9.40 -8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="-16.80 9.40 8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="-11.20 9.40 -8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="-11.20 9.40 8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="-5.60 9.40 -8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="-5.60 9.40 8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="0.00 9.40 -8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="0.00 9.40 8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="5.60 9.40 -8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="5.60 9.40 8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="11.20 9.40 -8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="11.20 9.40 8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="16.80 9.40 -8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+		<vox pos="16.80 9.40 8.40" rot="0 90 0" file="MOD/vox/truss.vox"/>
+	</body>
+	<body tags="ring">
+		<vox pos="0.00 0.60 0.00" file="MOD/vox/ring_platform.vox"/>
+		<vox pos="0.00 2.00 0.00" file="MOD/vox/ring_ropes.vox"/>
+	</body>
+	<body tags="spotlight">
+		<vox pos="0.00 9.30 0.00" file="MOD/vox/spotlight.vox"/>
+	</body>
+	<light name="spot" pos="0 8.25 0" rot="90 0 0" type="cone" color="1 0.95 0.86" scale="55" angle="78" penumbra="10" size="0.32" fogscale="3" fogiter="2" glare="0.5" unshadowed="0"/>
+	<body tags="barriers">
+		<vox pos="-8.00 0.60 -9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="-9.20 0.60 -8.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="-6.00 0.60 -9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="-9.20 0.60 -6.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="-4.00 0.60 -9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="-9.20 0.60 -4.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="-2.00 0.60 -9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="-9.20 0.60 -2.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="0.00 0.60 -9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="-9.20 0.60 0.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="2.00 0.60 -9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="-9.20 0.60 2.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="4.00 0.60 -9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="-9.20 0.60 4.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="6.00 0.60 -9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="-9.20 0.60 6.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="-8.00 0.60 9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="9.20 0.60 -8.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="-6.00 0.60 9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="9.20 0.60 -6.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="-4.00 0.60 9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="9.20 0.60 -4.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="-2.00 0.60 9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="9.20 0.60 -2.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="0.00 0.60 9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="9.20 0.60 0.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="2.00 0.60 9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="9.20 0.60 2.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="4.00 0.60 9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="9.20 0.60 4.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+		<vox pos="6.00 0.60 9.20" file="MOD/vox/barrier.vox"/>
+		<vox pos="9.20 0.60 6.00" rot="0 90 0" file="MOD/vox/barrier.vox"/>
+	</body>
+	<body tags="bleachers">
+		<vox pos="-6.60 0.80 -12.60" rot="0 180 0" file="MOD/vox/bleacher_13.vox"/>
+		<vox pos="6.60 0.80 -12.60" rot="0 180 0" file="MOD/vox/bleacher_13.vox"/>
+		<vox pos="-12.60 0.80 0.00" rot="0 -90 0" file="MOD/vox/bleacher_20.vox"/>
+		<vox pos="-6.60 0.80 12.60" file="MOD/vox/bleacher_13.vox"/>
+		<vox pos="6.60 0.80 12.60" file="MOD/vox/bleacher_13.vox"/>
+		<vox pos="12.60 0.80 0.00" rot="0 90 0" file="MOD/vox/bleacher_20.vox"/>
+	</body>
+	<body tags="halllights">
+		<vox pos="-14.00 8.50 -15.00" file="BUILT-IN/vox/light/ceiling_fluorecent_medium_orange.vox"/>
+		<vox pos="-14.00 8.50 15.00" file="BUILT-IN/vox/light/ceiling_fluorecent_medium_orange.vox"/>
+		<vox pos="0.00 8.50 -15.00" file="BUILT-IN/vox/light/ceiling_fluorecent_medium_orange.vox"/>
+		<vox pos="0.00 8.50 15.00" file="BUILT-IN/vox/light/ceiling_fluorecent_medium_orange.vox"/>
+		<vox pos="14.00 8.50 -15.00" file="BUILT-IN/vox/light/ceiling_fluorecent_medium_orange.vox"/>
+		<vox pos="14.00 8.50 15.00" file="BUILT-IN/vox/light/ceiling_fluorecent_medium_orange.vox"/>
+		<vox pos="-18.00 8.50 0.00" rot="0 90 0" file="BUILT-IN/vox/light/ceiling_fluorecent_medium_orange.vox"/>
+		<vox pos="18.00 8.50 0.00" rot="0 90 0" file="BUILT-IN/vox/light/ceiling_fluorecent_medium_orange.vox"/>
+	</body>
+	<light pos="-14 8.35 -15" rot="90 0 0" type="cone" color="1 0.75 0.45" scale="3" angle="150" penumbra="40" size="0.3 0.05" fogscale="0.4"/>
+	<light pos="-14 8.35 15" rot="90 0 0" type="cone" color="1 0.75 0.45" scale="3" angle="150" penumbra="40" size="0.3 0.05" fogscale="0.4"/>
+	<light pos="0 8.35 -15" rot="90 0 0" type="cone" color="1 0.75 0.45" scale="3" angle="150" penumbra="40" size="0.3 0.05" fogscale="0.4"/>
+	<light pos="0 8.35 15" rot="90 0 0" type="cone" color="1 0.75 0.45" scale="3" angle="150" penumbra="40" size="0.3 0.05" fogscale="0.4"/>
+	<light pos="14 8.35 -15" rot="90 0 0" type="cone" color="1 0.75 0.45" scale="3" angle="150" penumbra="40" size="0.3 0.05" fogscale="0.4"/>
+	<light pos="14 8.35 15" rot="90 0 0" type="cone" color="1 0.75 0.45" scale="3" angle="150" penumbra="40" size="0.3 0.05" fogscale="0.4"/>
+	<light pos="-18 8.35 0" rot="90 0 0" type="cone" color="1 0.75 0.45" scale="3" angle="150" penumbra="40" size="0.3 0.05" fogscale="0.4"/>
+	<light pos="18 8.35 0" rot="90 0 0" type="cone" color="1 0.75 0.45" scale="3" angle="150" penumbra="40" size="0.3 0.05" fogscale="0.4"/>
+	<light pos="0 7.5 12.5" rot="90 0 0" type="cone" color="0.75 0.8 1" scale="5" angle="120" penumbra="40" size="0.3" fogscale="0.25"/>
+	<light pos="0 7.5 -12.5" rot="90 0 0" type="cone" color="0.75 0.8 1" scale="5" angle="120" penumbra="40" size="0.3" fogscale="0.25"/>
+	<light pos="12.5 7.5 0" rot="90 0 0" type="cone" color="0.75 0.8 1" scale="5" angle="120" penumbra="40" size="0.3" fogscale="0.25"/>
+	<light pos="-12.5 7.5 0" rot="90 0 0" type="cone" color="0.75 0.8 1" scale="5" angle="120" penumbra="40" size="0.3" fogscale="0.25"/>
+	<body tags="signs">
+		<vox pos="22.35 3.00 8.00" rot="0 90 0" file="MOD/vox/exit_sign.vox"/>
+		<vox pos="-22.35 3.00 -8.00" rot="0 90 0" file="MOD/vox/exit_sign.vox"/>
+	</body>
+	<light pos="22 2.9 8" type="sphere" color="0.2 1 0.4" scale="1.2" size="0.1"/>
+	<light pos="-22 2.9 -8" type="sphere" color="0.2 1 0.4" scale="1.2" size="0.1"/>
+	<body tags="props">
+		<vox pos="-19.00 1.30 9.00" file="BUILT-IN/vox/prop/industrial/container_blue.vox"/>
+		<vox pos="-19.00 3.90 9.00" file="BUILT-IN/vox/prop/industrial/container_blue.vox"/>
+		<vox pos="-18.00 1.30 -9.50" file="BUILT-IN/vox/prop/industrial/container_red.vox" object="body"/>
+		<vox pos="-16.50 0.10 -3.00" file="BUILT-IN/vox/prop/pallet_set.vox" object="large"/>
+		<vox pos="-16.50 0.90 -3.00" file="BUILT-IN/vox/prop/crate_set.vox" object="large"/>
+		<vox pos="-16.30 1.70 -3.10" file="BUILT-IN/vox/prop/crate_set.vox" object="medium"/>
+		<vox pos="-16.50 0.10 -5.20" file="BUILT-IN/vox/prop/pallet_set.vox" object="medium"/>
+		<vox pos="-16.50 0.60 -5.20" file="BUILT-IN/vox/prop/crate_set.vox" object="small"/>
+		<vox pos="-15.20 0.80 3.50" rot="0 30 0" file="BUILT-IN/vox/prop/industrial/pallettruck.vox"/>
+		<vox pos="-20.50 0.55 -2.00" file="BUILT-IN/vox/prop/industrial/cabledrum.vox"/>
+		<vox pos="-20.60 0.65 1.00" file="BUILT-IN/vox/prop/industrial/barrel.vox" object="yellow"/>
+		<vox pos="-20.00 0.65 2.10" file="BUILT-IN/vox/prop/industrial/barrel.vox" object="blue"/>
+		<vox pos="-20.60 0.65 3.20" file="BUILT-IN/vox/prop/industrial/barrel.vox" object="grey"/>
+		<vox pos="-15.50 0.75 13.50" file="BUILT-IN/vox/prop/tyres_scrap_set.vox" object="tyre_tractor"/>
+		<vox pos="19.00 1.30 -9.00" file="BUILT-IN/vox/prop/industrial/container_blue.vox"/>
+		<vox pos="19.00 3.90 -9.00" file="BUILT-IN/vox/prop/industrial/container_blue.vox"/>
+		<vox pos="18.00 1.30 9.50" file="BUILT-IN/vox/prop/industrial/container_green.vox"/>
+		<vox pos="16.50 0.10 3.00" file="BUILT-IN/vox/prop/pallet_set.vox" object="large"/>
+		<vox pos="16.50 0.90 3.00" file="BUILT-IN/vox/prop/crate_set.vox" object="large"/>
+		<vox pos="16.30 1.70 3.10" file="BUILT-IN/vox/prop/crate_set.vox" object="medium"/>
+		<vox pos="16.50 0.10 5.20" file="BUILT-IN/vox/prop/pallet_set.vox" object="medium"/>
+		<vox pos="16.50 0.60 5.20" file="BUILT-IN/vox/prop/crate_set.vox" object="small"/>
+		<vox pos="15.20 0.80 -3.50" rot="0 30 0" file="BUILT-IN/vox/prop/industrial/pallettruck.vox"/>
+		<vox pos="20.50 0.55 2.00" file="BUILT-IN/vox/prop/industrial/cabledrum.vox"/>
+		<vox pos="20.60 0.65 -1.00" file="BUILT-IN/vox/prop/industrial/barrel.vox" object="yellow"/>
+		<vox pos="20.00 0.65 -2.10" file="BUILT-IN/vox/prop/industrial/barrel.vox" object="blue"/>
+		<vox pos="20.60 0.65 -3.20" file="BUILT-IN/vox/prop/industrial/barrel.vox" object="grey"/>
+		<vox pos="15.50 0.75 -13.50" file="BUILT-IN/vox/prop/tyres_scrap_set.vox" object="tyre_tractor"/>
+	</body>
+	<trigger tags="brawl_area" pos="0 1.00 0" type="box" size="7.90 3 7.90"/>
+	<script file="MOD/ring.lua"/>
+</scene>
