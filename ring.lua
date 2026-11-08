@@ -13,7 +13,8 @@
 -- A knocked-out player stands up beside the ring after RESPAWN_TIME s - unless the Brawl game mode runs
 -- (registry brawl.active: it owns respawns then). The Brawl mode's events (brawl.event.*: round start / end, a
 -- knocked fighter getting up) cheer. No bell (the user asked to remove it).
--- The fight area for Brawl: registry brawl.area = the ring inside the ropes (Brawl's API; see brawl/PROJECT.md).
+-- The fight area for Brawl: registry brawl.area = the ring up to just outside the ropes (Brawl's API; see
+-- brawl/PROJECT.md).
 --
 -- Every client: spawns its own crowd (static bodies from crowd_data.lua, not physical: collide='false', layer 128)
 -- and makes them hop - more of them, higher and wilder with the hype - and plays the crowd's loops and roars. Each
@@ -27,6 +28,10 @@
 
 RING_H = 1.2                  -- canvas top (m); the ring is centred on the origin
 ROPES = 3.95                  -- rope line (half size of the canvas inside the ropes; tools/make_level.py ROPE_LINE)
+AREA_HALF = 4.15              -- Brawl's fight area: half size, just outside the ropes and the corner posts (on the apron;
+                              -- on the rope line itself the north rope - a hair further out - was missed and the
+                              -- outline ran inside it, the user: "doesn't cover the north edge"); a player on the apron
+                              -- stays outside (their body can't get nearer than ~0.35 m to the ropes)
 RING_ZONE = 4.75              -- a hit counts for the crowd when the victim's feet are within this half size ...
 RING_ZONE_Y = 0.6             -- ... and above RING_H - this
 HYPE_BASE = 0.12              -- the murmur while there is a fight on (see QUIET_AFTER)
@@ -56,7 +61,7 @@ function server.init()
 	srv = {hype = 0, rest = 0, lastAction = -999, inside = {}, ev = 0, kind = "", at = Vec(0, RING_H, 0), combos = {}, respawn = {}, pubAt = 0,
 		brawlSeen = GetInt("brawl.event.last")}
 	-- the Brawl game mode's fight area (its API: a box from the canvas up, inside the ropes)
-	SetString("brawl.area", string.format("box %.2f %.2f %.2f %.2f %.2f %.2f", -ROPES, RING_H - 0.3, -ROPES, ROPES, RING_H + 3.5, ROPES))
+	SetString("brawl.area", string.format("box %.2f %.2f %.2f %.2f %.2f %.2f", -AREA_HALF, RING_H - 0.3, -AREA_HALF, AREA_HALF, RING_H + 3.5, AREA_HALF))
 	publish()
 end
 
